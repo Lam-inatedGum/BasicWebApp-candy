@@ -94,48 +94,55 @@ console.log("You might like", brand, "candy!");
 </style>
 
 
-
+<Firest page>
 <!--Main HTML body section.-->
 <body>
   <!--Landing page content.-->
   <div id="content" class="w3-container">
   	<!--Header!-->
 	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>APP NAME GOES HERE</h1>
+		<h1> CANDY RECOMMENDATIONS </h1>
 	</div>
 	
-	  <p>INTRODUCTION/DESCRIPTION OF APP GOES HERE</p>
+	  <p>This site will ask preference and recommend a brand of candy!</p>
 	
 	  <a href="#one" class="w3-btn w3-grey w3-round">Get Started!</a>
 	
 	  <p>The following code has been developed by students and/or researchers of the Freshman Research Initiative Maker Space Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the Maker Space Stream, FRI, and The University of Texas system are not liable for anything related to this code. THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION!</p>
   
   
-  
+  <second page>
 <!--FIRST SUBPAGE-->
 <div id="one" class="page">
 	<div id="header2" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
+		<h1>Questions </h1>
 	</div>
 	
   <center>
     
     	<div id="content2" class="w3-container">
-        	<p>QUESTION 1 GOES HERE</p>    
+        	<p>What is your preference?</p>    
     	</div>
 	
 	<!--Form element. This allows for user input in HTML.-->
 	<form>
-		<!--Label for first input field.-->
-		<label for="firstInputBox">Enter a number:</label><br>
-		<!--User input box.-->
-		<input type="number" id="firstInputBox" value="0"><br>
-		<!--Label for second input field.-->
-		<label for="secondInputBox">Enter another number:</label><br>
-		<!--User input box.-->
-		<input type="number" id="secondInputBox" value="0">
 		
-		<br><br><br>
+	let score = 0;
+
+	let user_prefs = [
+	  prompt("Do you prefer sweeet or sour candy? "),
+	  prompt("Do you prefer fruity or chocolatey candy? "),
+	  prompt("Do you preffer hard or soft candy? ")
+	];
+
+	user_prefs.forEach(pref => {
+	  if (pref === "sweet" || pref === "fruity" || pref === "soft") {
+	    score++;
+	  } else if (pref === "sour" || pref === "chocolatey" || pref === "hard") {
+	    score--;
+	  }
+	});
+
 	</form>
       
   <a href="#finalpage" onclick="exampleFunction1();" class="w3-btn w3-grey">Button 1</a>
@@ -160,18 +167,21 @@ console.log("You might like", brand, "candy!");
 <!--LAST SUBPAGE-->
 <div id="finalpage" class="page">
 	<div id="finalheader" class="w3-container w3-flat-carrot">
-		<h1>FINAL PAGE TITLE GOES HERE</h1>
+		<h1> TRY THE BRAND </h1>
+		
+	
+
 	</div>
 	
   <center>
     
 	  <div id="finalcontent" class="w3-container">
-		  <p id="endResults">FINAL PAGE CONTENT GOES HERE</p>
+		  <p console.log("You might like", brand, "candy!"); </p>
 	  </div>
   
   <a class="w3-btn w3-black" onclick="exampleResultsFunction();">Click me!
     <br>
-    <img id="resultsButtonImg" src="https://i.imgur.com/rZOaHhx.png" width="30" alt="spongebob">
+    <img id="resultsButtonImg" src="https://imgur.com/a/GgH2qmU" width="30" alt="spongebob">
   </a>
   <a href="#content" onclick="resetVariables();" class="w3-btn w3-black">Return to Home Page</a>
     
@@ -182,7 +192,7 @@ console.log("You might like", brand, "candy!");
   
 <!--Footer!-->
 <footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>YOUR NAME (or anything you want) HERE</p>
+	<p> Lam is not responisble for any injuries or harm caused by the answers recieved from code </p>
 </footer>
 </div>
 
