@@ -35,56 +35,37 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <!--Javascript code.-->
 <script>
-	var exampleVariable1 = 0;
-	var exampleVariable2 = 0;
-	var exampleVariable3 = 0;
-	
-	function exampleFunction1()
-	{
-		// Assigns values to existing variables based on user input. The parseFloat() function converts string values to numerical values.
-    		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 + exampleVariable2;
-		
-		alert("You just ran an addition function!");
-		console.log("Addition function was run.");
-	}
-	
-	function exampleFunction2()
-	{
-		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 * exampleVariable2;
-		
-		alert("You just ran a multiplication function!");
-		console.log("Multiplication function was run.");
-	}
-	
-	function exampleFunction3()
-	{
-		exampleVariable1 = parseFloat(document.getElementById("firstInputBox").value);
-    		exampleVariable2 = parseFloat(document.getElementById("secondInputBox").value);
-		
-		exampleVariable3 = exampleVariable1 ** exampleVariable2;
-		
-		alert("You just ran an exponent function!");
-		console.log("Exponent function was run.");
-	}
-	
-	function exampleResultsFunction()
-	{
-		document.getElementById("endResults").innerHTML = "Your final result is: " + exampleVariable3;
-		resetVariables();
-	}
-	
-	function resetVariables()
-	{
-		exampleVariable1 = 0;
-		exampleVariable2 = 0;
-		exampleVariable3 = 0;
-	}
+let score = 0;
+
+let user_prefs = [
+  prompt("Do you prefer sweeet or sour candy? "),
+  prompt("Do you prefer fruity or chocolatey candy? "),
+  prompt("Do you preffer hard or soft candy? ")
+];
+
+user_prefs.forEach(pref => {
+  if (pref === "sweet" || pref === "fruity" || pref === "soft") {
+    score++;
+  } else if (pref === "sour" || pref === "chocolatey" || pref === "hard") {
+    score--;
+  }
+});
+
+let brand = "";
+if (score >= 2) {
+  brand = "Skitttles";
+} else if (score === 1) {
+  brand = "Starburst";
+} else if (score === 0) {
+  brand = "M&Ms";
+} else if (score === -1) {
+  brand = "Hershey's Kisses";
+} else {
+  brand = "Sour Patch Kids";
+}
+
+console.log("You might like", brand, "candy!");
+
 </script>
   
   
